@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Widow's Son — Sadiq Al-Harasi</title>
+  <meta name="description" content="A Widow's Son, a photographic exploration of masculinity, childhood, fatherhood and social expectations by Sadiq Al-Harasi.">
+
+  <style>
+    :root {
+      --paper: #f8f7f4;
+      --ink: #242420;
+      --muted: #77766f;
+      --line: #dedcd5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { opacity: 0.6; }
+
+    .site-header {
+      padding: 25px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-name { font-size: 15px; font-weight: 600; }
+
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 13px;
+    }
+
+    .dropdown { position: relative; }
+
+    .dropdown summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .dropdown summary::-webkit-details-marker { display: none; }
+    .dropdown summary::after { content: " ↓"; font-size: 11px; }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 10;
+      width: 300px;
+      max-width: 85vw;
+      max-height: 70vh;
+      overflow-y: auto;
+      padding: 18px;
+      margin-top: 12px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dropdown[open] .dropdown-menu { display: flex; }
+
+    .dropdown-menu .menu-heading {
+      margin: 8px 0 2px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dropdown-menu a { font-size: 12px; line-height: 1.5; }
+
+    main {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 55px 5vw 80px;
+    }
+
+    .project-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 0.65fr);
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 1.05;
+      margin: 0 0 16px;
+    }
+
+    .metadata {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .project-description {
+      max-width: 640px;
+      margin-left: auto;
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .project-description p { margin: 0 0 22px; }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 70px;
+    }
+
+    .gallery figure { margin: 0; }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      max-height: 1000px;
+      object-fit: contain;
+      background: #eeece7;
+    }
+
+    .gallery figcaption {
+      padding-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 60px;
+      font-size: 12px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 20px 5vw;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .navigation { gap: 15px; }
+
+      main { padding-top: 35px; }
+
+      .project-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .project-description { margin-left: 0; }
+      .gallery { margin-top: 45px; gap: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="site-name" href="index.html">Sadiq Al-Harasi</a>
+
+    <nav class="navigation" aria-label="Main navigation">
+      <details class="dropdown">
+        <summary>Projects</summary>
+        <div class="dropdown-menu">
+          <a href="projects.html">All projects — overview</a>
+
+          <p class="menu-heading">Documentary Photography</p>
+          <a href="widows-son.html">A Widow's Son (2026)</a>
+          <a href="exile.html">In Exile, You Have No Memory (2026)</a>
+          <a href="normal-life.html">As a Lie, As a Dream (Finding a Normal Life)</a>
+          <a href="fathers.html">What Do Fathers Leave Behind?</a>
+          <a href="revisioning-roads.html">Revisioning Roads (2023)</a>
+
+          <p class="menu-heading">Installations</p>
+          <a href="smells-like-home.html">Smells Like Home!</a>
+          <a href="tracing-absence.html">Tracing Absence</a>
+        </div>
+      </details>
+      <a href="curating.html">Curating</a>
+      <a href="about.html">About</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-heading">
+      <div>
+        <h1>A Widow's Son</h1>
+        <div class="metadata">
+          2026<br>
+          Digital photography, crossword, text, hand-woven photographic work and new media
+        </div>
+      </div>
+
+      <div class="project-description">
+        <p>My personal project, <em>A Widow’s Son</em>, is a visual exploration of masculinity, childhood, the absence of the father, and the experiences that have shaped my understanding of society’s expectations of manhood. It stems from my experience as a Yemeni man from a tribal region in northern Yemen, where I grew up within specific social expectations and traditional frameworks that influenced how I understood the identity I was expected to embody.</p>
+
+        <p>Within this project, I’m trying to understand these patterns as a Yemeni man who was raised primarily by my mother after my father died when I was eleven. When he passed away, many people told me not to cry, claiming that men do not cry. In that moment, I was told that I had become a man: “You are now the man of the house.”</p>
+
+        <p>During my primary and secondary school years, I rarely left home. When I eventually began to go out and encounter the world beyond it, I encountered forms of behaviour, language, and social expectations that had been largely absent from my upbringing. A central element was the conventional image of masculinity. I experienced moments in which my identity, speech, or behaviour was mocked, or in which my manhood was questioned or belittled. Through this project, I'm trying to understand, question, and negotiate my relationship with masculinity, while also documenting a personal experience through photography, writing, games, and conversations with friends.</p>
+
+        <p>The project combines self-portraits with textual elements that reflect words and expectations I have encountered throughout my life, including phrases spoken directly to me and Arabic terms that function as synonyms, opposites, or associations of masculinity and manhood. I'm trying to create a dialogue between the self-portraits and these words, exploring how language and repeated expectations can influence a person’s understanding of themselves over time.</p>
+
+        <p>It also explores the sense of deficiency associated with the title <em>A Widow’s Son</em>, alongside the ways in which social expectations and traditional patterns become embedded in our identities. It is an attempt to examine some of the characteristics, behaviours, and practices that I encountered as markers of masculinity within my social environment. The project doesn’t attempt to define Yemeni masculinity. It investigates one person's experience of learning, performing, questioning and reconstructing masculinity within several cultural contexts.</p>
+      </div>
+    </section>
+
+    <section class="gallery" aria-label="Project photographs">
+      <figure>
+        <img src="images/001.jpg" alt="A Widow's Son — photograph 1" loading="lazy">
+        <figcaption>A Widow's Son, 2026</figcaption>
+      </figure>
+      <figure>
+        <img src="images/002.jpg" alt="A Widow's Son — photograph 2" loading="lazy">
+        <figcaption>A Widow's Son, 2026</figcaption>
+      </figure>
+      <figure>
+        <img src="images/003.jpg" alt="A Widow's Son — photograph 3" loading="lazy">
+        <figcaption>A Widow's Son, 2026</figcaption>
+      </figure>
+      <figure>
+        <img src="images/004.jpg" alt="A Widow's Son — photograph 4" loading="lazy">
+        <figcaption>A Widow's Son, 2026</figcaption>
+      </figure>
+      <figure>
+        <img src="images/005.jpg" alt="A Widow's Son — photograph 5" loading="lazy">
+        <figcaption>A Widow's Son, 2026</figcaption>
+      </figure>
+      <figure>
+        <img src="images/006.jpg" alt="A Widow's Son — photograph 6" loading="lazy">
+        <figcaption>A Widow's Son, 2026</figcaption>
+      </figure>
+      <figure>
+        <img src="images/007.jpg" alt="A Widow's Son — photograph 7" loading="lazy">
+        <figcaption>A Widow's Son, 2026</figcaption>
+      </figure>
+      <figure>
+        <img src="images/008.jpg" alt="A Widow's Son — photograph 8" loading="lazy">
+        <figcaption>A Widow's Son, 2026</figcaption>
+      </figure>
+    </section>
+
+    <a class="back-link" href="projects.html">← Back to all projects</a>
+  </main>
+
+  <footer>Sadiq Al-Harasi · Aarhus, Denmark</footer>
+</body>
+</html>
