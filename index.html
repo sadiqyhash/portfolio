@@ -63,7 +63,56 @@
       flex-wrap: wrap;
       gap: 24px;
       font-size: 13px;
+   
+    .dropdown {
+      position: relative;
     }
+
+    .dropdown summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .dropdown summary::after {
+      content: " ↓";
+      font-size: 11px;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 10;
+      width: 300px;
+      max-width: 85vw;
+      max-height: 70vh;
+      overflow-y: auto;
+      padding: 18px;
+      margin-top: 12px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dropdown-menu .menu-heading {
+      margin: 8px 0 2px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dropdown-menu a {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+ }
 
     main {
       max-width: 1600px;
@@ -170,7 +219,25 @@
     <a class="site-name" href="index.html">Sadiq Al-Harasi</a>
 
     <nav class="navigation" aria-label="Main navigation">
-      <a href="projects.html">Projects</a>
+      
+<details class="dropdown">
+  <summary>Projects</summary>
+  <div class="dropdown-menu">
+    <a href="projects.html">All projects — overview</a>
+
+    <p class="menu-heading">Documentary Photography</p>
+    <a href="widows-son.html">A Widow's Son</a>
+    <a href="exile.html">In Exile, You Have No Memory</a>
+    <a href="normal-life.html">As a Lie, As a Dream</a>
+    <a href="fathers.html">What Do Fathers Leave Behind?</a>
+    <a href="revisioning-roads.html">Revisioning Roads</a>
+
+    <p class="menu-heading">Installations</p>
+    <a href="smells-like-home.html">Smells Like Home!</a>
+    <a href="tracing-absence.html">Tracing Absence</a>
+  </div>
+</details>
+
       <a href="curating.html">Curating</a>
       <a href="about.html">About</a>
       <a href="cv.html">CV</a>
