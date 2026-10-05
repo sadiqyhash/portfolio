@@ -99,6 +99,29 @@
       flex-direction: column;
       gap: 10px;
     }
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: flex;
+}
+
+.dropdown:not([open]) .dropdown-menu {
+  display: none;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu {
+  display: flex;
+}
+
+.dropdown:not([open]) > .dropdown-menu {
+  display: none;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown[open] > .dropdown-menu {
+  display: flex;
+}
+
 
     .dropdown-menu .menu-heading {
       margin: 8px 0 2px;
