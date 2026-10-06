@@ -60,6 +60,16 @@
     footer { margin:0 !important; padding:20px 5vw !important; display:flex; align-items:center; justify-content:space-between; gap:20px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; line-height:1.5; }
     footer span { display:block; }
 
+  
+    details.dropdown { position:relative; }
+    details.dropdown > summary { display:inline-block; cursor:pointer; list-style:none; }
+    details.dropdown > summary::-webkit-details-marker { display:none; }
+    details.dropdown > summary::after { content:" ↓"; font-size:11px; }
+    details.dropdown .dropdown-menu { display:none; position:absolute; z-index:100; top:calc(100% + 6px); left:0; right:auto; width:290px; max-width:85vw; max-height:70vh; overflow-y:auto; padding:18px; background:var(--paper); border:1px solid var(--line); box-shadow:0 8px 22px rgba(0,0,0,.06); }
+    details.dropdown[open] .dropdown-menu { display:flex; flex-direction:column; gap:9px; }
+    details.dropdown .dropdown-menu a { display:block; font-size:12px; line-height:1.5; }
+    details.dropdown .menu-heading { margin:10px 0 2px; color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+
   </style>
 <link rel="stylesheet" href="theme.css"></head><body>
 <header class="site-header">
