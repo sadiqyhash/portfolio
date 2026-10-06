@@ -135,11 +135,17 @@
       text-transform: uppercase;
     }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 30px 20px;
-    }
+    .project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:46px 28px; }
+    .project-card { min-width:0; padding-bottom:24px; border-bottom:1px solid var(--line); }
+    .project-card a { display:block; }
+    .project-card img { height:clamp(230px,32vw,430px); margin-bottom:18px; }
+    .project-kicker { display:flex; justify-content:space-between; gap:12px; margin:0 0 10px; color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+    .project-card h2 { max-width:560px; margin:0 0 10px; font-size:clamp(20px,2.4vw,28px); line-height:1.2; letter-spacing:-.025em; }
+    .project-card .project-summary { max-width:560px; margin:0 0 13px; color:var(--ink); font-size:13px; line-height:1.7; }
+    .project-card .project-date { color:var(--muted); font-size:11px; }
+    .project-card a:hover img { opacity:.82; transition:opacity .2s ease; }
+    .project-section { margin-bottom:64px; }
+    .section-heading { margin-bottom:24px; }
 
     .project-card { min-width: 0; }
     .project-card a { display: block; }
@@ -186,13 +192,14 @@
 
       .navigation { flex-wrap: wrap; gap: 16px; }
       main { padding-top: 28px; }
-      .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
-      .project-card img { height: 170px; }
+       .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px 16px; }
+      .project-card img { height:clamp(190px,34vw,300px); }
     }
 
-    @media (max-width: 440px) {
-      .project-grid { grid-template-columns: 1fr; }
-      .project-card img { height: auto; max-height: 340px; }
+    @media (max-width: 520px) {
+      .project-grid { grid-template-columns:1fr; gap:32px; }
+      .project-card img { height:auto; max-height:none; aspect-ratio:4/3; object-fit:contain; }
+      .project-card h2 { font-size:23px; }
     }
   
     footer { margin:0 !important; padding:20px 5vw !important; display:flex; align-items:center; justify-content:space-between; gap:20px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; line-height:1.5; }
@@ -230,8 +237,7 @@
     <section class="page-heading">
       <h1>Projects</h1>
       <p>
-        Selected projects in documentary photography, research and
-        installation.
+        A selection of ongoing and completed projects exploring memory, identity, displacement, and belonging through photography, archives, text, and installation.
       </p>
     </section>
 
@@ -242,37 +248,47 @@
         <article class="project-card">
           <a href="widows-son.html">
             <img src="images/001.jpg" alt="A Widow's Son" loading="lazy">
+            <p class="project-kicker"><span>01 / Documentary</span><span>2026</span></p>
             <h2>A Widow's Son</h2>
-            <p>2026</p>
+            <p class="project-summary">A personal investigation into masculinity, childhood, and the expectations placed on a Yemeni man after the loss of his father.</p>
+            <p class="project-date">Photography · Text · Hand-woven image · New media</p>
           </a>
         </article>
 
         <article class="project-card">
           <a href="exile.html">
             <img src="images/In%20Exile_DMJX_PH1_SY_001.jpg" alt="In Exile, You Have No Memory" loading="lazy">
+            <p class="project-kicker"><span>02 / Documentary</span><span>2026</span></p>
             <h2>In Exile, You Have No Memory</h2>
-            <p>2026</p></a>
+            <p class="project-summary">A portrait of asylum, waiting, and the fragile geographies of home through the lives of a Yemeni couple in the Netherlands.</p>
+            <p class="project-date">Documentary photography</p></a>
         </article>
 
         <article class="project-card">
           <a href="normal-life.html">
             <img src="images/S2_001.jpg" alt="As a Lie, As a Dream (Finding a Normal Life)" loading="lazy">
-            <h2>As a Lie, As a Dream (Finding a Normal Life)</h2>
-            <p>2025 — Ongoing</p></a>
+            <p class="project-kicker"><span>03 / Documentary</span><span>2025 — Ongoing</span></p>
+            <h2>As a Lie, As a Dream</h2>
+            <p class="project-summary">A reflection on the idea of a “normal life” after conflict, and on the dreams that survive when familiar futures fall away.</p>
+            <p class="project-date">Photography · Text</p></a>
         </article>
 
         <article class="project-card">
           <a href="fathers.html">
             <img src="images/Al-HarasiS01.jpg" alt="What Do Fathers Leave Behind?" loading="lazy">
+            <p class="project-kicker"><span>04 / Documentary</span><span>2023 — Ongoing</span></p>
             <h2>What Do Fathers Leave Behind?</h2>
-            <p>2023 — Ongoing</p></a>
+            <p class="project-summary">An ongoing search through family photographs, stories, and sound to trace a father’s absence and the identities shaped around it.</p>
+            <p class="project-date">Photography · Family archive · Sound · Text</p></a>
         </article>
 
         <article class="project-card">
           <a href="revisioning-roads.html">
             <img src="images/SH_RR_001.jpg" alt="Revisioning Roads" loading="lazy">
+            <p class="project-kicker"><span>05 / Documentary</span><span>2015 — Ongoing</span></p>
             <h2>Revisioning Roads</h2>
-            <p>2023</p></a>
+            <p class="project-summary">A photographic project that reimagines roads as spaces of connection, movement, and coexistence across divided communities.</p>
+            <p class="project-date">Photography · Stitching · Mixed media</p></a>
         </article>
       </div>
     </section>
@@ -284,15 +300,19 @@
         <article class="project-card">
           <a href="smells-like-home.html">
             <img src="images/_H5A9955.JPG" alt="Smells Like Home!" loading="lazy">
+            <p class="project-kicker"><span>06 / Installation</span><span>July 2025</span></p>
             <h2>Smells Like Home!</h2>
-            <p>July 2025</p></a>
+            <p class="project-summary">An exploration of scent as an intimate archive, tracing how smell can evoke memory, belonging, and the emotional geography of home.</p>
+            <p class="project-date">Mixed-media installation</p></a>
         </article>
 
         <article class="project-card">
           <a href="tracing-absence.html">
             <img src="images/IMG_9007-10.jpg" alt="Tracing Absence" loading="lazy">
+            <p class="project-kicker"><span>07 / Installation</span><span>November 2024</span></p>
             <h2>Tracing Absence</h2>
-            <p>November 2024</p></a>
+            <p class="project-summary">A mixed-media work combining a family voice, photo transfers, and cyanotypes to reflect on loss and longing.</p>
+            <p class="project-date">Video · Photo transfer · Cyanotype</p></a>
         </article>
       </div>
     </section>
@@ -300,42 +320,5 @@
 
   <footer><span>© 2026 Sadiq Al-Harasi</span></footer>
 
-  <script>
-    const dropdown = document.getElementById("projects-dropdown");
-    const trigger = dropdown.querySelector(".dropdown-trigger");
-
-    trigger.addEventListener("click", (event) => {
-      /* First click on touch devices opens the menu. */
-      if (!dropdown.classList.contains("open")) {
-        event.preventDefault();
-        dropdown.classList.add("open");
-        trigger.setAttribute("aria-expanded", "true");
-      }
-    });
-
-    document.addEventListener("click", (event) => {
-      if (!dropdown.contains(event.target)) {
-        dropdown.classList.remove("open");
-        trigger.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    dropdown.addEventListener("mouseenter", () => {
-      trigger.setAttribute("aria-expanded", "true");
-    });
-
-    dropdown.addEventListener("mouseleave", () => {
-      trigger.setAttribute("aria-expanded", "false");
-      dropdown.classList.remove("open");
-    });
-
-    trigger.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        dropdown.classList.remove("open");
-        trigger.setAttribute("aria-expanded", "false");
-        trigger.blur();
-      }
-    });
-  </script>
 </body>
 </html>
