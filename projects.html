@@ -123,64 +123,31 @@
       font-size: 13px;
     }
 
-    .project-section { margin-bottom: 42px; }
-
-    .section-heading {
-      margin: 0 0 16px;
-      padding-bottom: 9px;
-      border-bottom: 1px solid var(--line);
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
+    .project-carousel-section { margin-top:26px; }
+    .carousel-toolbar { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:20px; }
+    .carousel-toolbar p { margin:0; color:var(--muted); font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+    .carousel-toolbar p span { margin-left:14px; color:var(--ink); }
+    .carousel-controls { display:flex; gap:8px; }
+    .carousel-arrow { width:42px; height:42px; border:1px solid var(--line); background:transparent; color:var(--ink); font:inherit; cursor:pointer; }
+    .carousel-arrow:hover { background:var(--ink); color:var(--paper); }
+    .project-carousel { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(72%, 1fr); gap:16px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:thin; scrollbar-color:var(--muted) transparent; padding-bottom:16px; }
+    .project-card { min-width:0; scroll-snap-align:start; }
+    .project-card a { position:relative; display:block; overflow:hidden; background:#171717; aspect-ratio:4/3; }
+    .project-card img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; margin:0; transition:transform .45s ease, opacity .3s ease; }
+    .project-overlay { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; gap:8px; padding:24px; background:linear-gradient(transparent 28%,rgba(0,0,0,.82)); color:#fff; opacity:0; transition:opacity .25s ease; }
+    .project-overlay span { font-size:11px; letter-spacing:.05em; text-transform:uppercase; }
+    .project-overlay h2 { max-width:480px; margin:0; font-size:clamp(22px,3vw,36px); line-height:1.15; font-weight:400; letter-spacing:-.03em; }
+    .project-card a:hover .project-overlay, .project-card a:focus-visible .project-overlay { opacity:1; }
+    .project-card a:hover img, .project-card a:focus-visible img { transform:scale(1.025); }
+    .carousel-hint { margin:14px 0 0; color:var(--muted); font-size:11px; }
+    @media (hover:none) { .project-overlay { opacity:1; background:linear-gradient(transparent 25%,rgba(0,0,0,.75)); } }
+    @media (max-width:760px) {
+      .project-carousel { grid-auto-columns:minmax(84%,1fr); }
+      .project-overlay { padding:18px; }
     }
-
-    .project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:46px 28px; }
-    .project-card { min-width:0; padding-bottom:24px; border-bottom:1px solid var(--line); }
-    .project-card a { display:block; }
-    .project-card img { height:clamp(230px,32vw,430px); margin-bottom:18px; }
-    .project-kicker { display:flex; justify-content:space-between; gap:12px; margin:0 0 10px; color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
-    .project-card h2 { max-width:560px; margin:0 0 10px; font-size:clamp(20px,2.4vw,28px); line-height:1.2; letter-spacing:-.025em; }
-    .project-card .project-summary { max-width:560px; margin:0 0 13px; color:var(--ink); font-size:13px; line-height:1.7; }
-    .project-card .project-date { color:var(--muted); font-size:11px; }
-    .project-card a:hover img { opacity:.82; transition:opacity .2s ease; }
-    .project-section { margin-bottom:64px; }
-    .section-heading { margin-bottom:24px; }
-
-    .project-card { min-width: 0; }
-    .project-card a { display: block; }
-
-    .project-card img {
-      display: block;
-      width: 100%;
-      height: 210px;
-      object-fit: contain;
-      object-position: center;
-      margin-bottom: 11px;
-      background: transparent;
-    }
-
-    .project-card h2 {
-      margin: 0 0 3px;
-      font-size: 16px;
-      line-height: 1.4;
-      font-weight: 400;
-    }
-
-    .project-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.5;
-    }
-
-    .project-card a:hover h2 { opacity: 0.6; }
-
-    footer {
-      padding: 20px 5%;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 11px;
+    @media (max-width:440px) {
+      .project-carousel { grid-auto-columns:92%; gap:12px; }
+      .project-overlay h2 { font-size:25px; }
     }
 
     @media (max-width: 760px) {
@@ -241,80 +208,59 @@
       </p>
     </section>
 
-    <section class="project-section" aria-labelledby="documentary-heading">
-      <h2 class="section-heading" id="documentary-heading">Documentary Photography</h2>
-
-      <div class="project-grid">
+    <section class="project-carousel-section" aria-label="Selected projects">
+      <div class="carousel-toolbar">
+        <p>Selected work <span>01 — 07</span></p>
+        <div class="carousel-controls">
+          <button class="carousel-arrow" type="button" id="carousel-prev" aria-label="Previous projects">←</button>
+          <button class="carousel-arrow" type="button" id="carousel-next" aria-label="Next projects">→</button>
+        </div>
+      </div>
+      <div class="project-carousel" id="project-carousel" tabindex="0" aria-label="Scroll through projects">
         <article class="project-card">
           <a href="widows-son.html">
             <img src="images/001.jpg" alt="A Widow's Son" loading="lazy">
-            <p class="project-kicker"><span>01 / Documentary</span><span>2026</span></p>
-            <h2>A Widow's Son</h2>
-            <p class="project-summary">A personal investigation into masculinity, childhood, and the expectations placed on a Yemeni man after the loss of his father.</p>
-            <p class="project-date">Photography · Text · Hand-woven image · New media</p>
+            <div class="project-overlay"><span>2026 · Documentary</span><h2>A Widow's Son</h2></div>
           </a>
         </article>
-
         <article class="project-card">
           <a href="exile.html">
             <img src="images/In%20Exile_DMJX_PH1_SY_001.jpg" alt="In Exile, You Have No Memory" loading="lazy">
-            <p class="project-kicker"><span>02 / Documentary</span><span>2026</span></p>
-            <h2>In Exile, You Have No Memory</h2>
-            <p class="project-summary">A portrait of asylum, waiting, and the fragile geographies of home through the lives of a Yemeni couple in the Netherlands.</p>
-            <p class="project-date">Documentary photography</p></a>
+            <div class="project-overlay"><span>2026 · Documentary</span><h2>In Exile, You Have No Memory</h2></div>
+          </a>
         </article>
-
         <article class="project-card">
           <a href="normal-life.html">
-            <img src="images/S2_001.jpg" alt="As a Lie, As a Dream (Finding a Normal Life)" loading="lazy">
-            <p class="project-kicker"><span>03 / Documentary</span><span>2025 — Ongoing</span></p>
-            <h2>As a Lie, As a Dream</h2>
-            <p class="project-summary">A reflection on the idea of a “normal life” after conflict, and on the dreams that survive when familiar futures fall away.</p>
-            <p class="project-date">Photography · Text</p></a>
+            <img src="images/S2_001.jpg" alt="As a Lie, As a Dream" loading="lazy">
+            <div class="project-overlay"><span>2025 — Ongoing · Documentary</span><h2>As a Lie, As a Dream</h2></div>
+          </a>
         </article>
-
         <article class="project-card">
           <a href="fathers.html">
             <img src="images/Al-HarasiS01.jpg" alt="What Do Fathers Leave Behind?" loading="lazy">
-            <p class="project-kicker"><span>04 / Documentary</span><span>2023 — Ongoing</span></p>
-            <h2>What Do Fathers Leave Behind?</h2>
-            <p class="project-summary">An ongoing search through family photographs, stories, and sound to trace a father’s absence and the identities shaped around it.</p>
-            <p class="project-date">Photography · Family archive · Sound · Text</p></a>
+            <div class="project-overlay"><span>2023 — Ongoing · Documentary</span><h2>What Do Fathers Leave Behind?</h2></div>
+          </a>
         </article>
-
         <article class="project-card">
           <a href="revisioning-roads.html">
             <img src="images/SH_RR_001.jpg" alt="Revisioning Roads" loading="lazy">
-            <p class="project-kicker"><span>05 / Documentary</span><span>2015 — Ongoing</span></p>
-            <h2>Revisioning Roads</h2>
-            <p class="project-summary">A photographic project that reimagines roads as spaces of connection, movement, and coexistence across divided communities.</p>
-            <p class="project-date">Photography · Stitching · Mixed media</p></a>
+            <div class="project-overlay"><span>2015 — Ongoing · Documentary</span><h2>Revisioning Roads</h2></div>
+          </a>
         </article>
-      </div>
-    </section>
-
-    <section class="project-section" aria-labelledby="installations-heading">
-      <h2 class="section-heading" id="installations-heading">Installations</h2>
-
-      <div class="project-grid">
         <article class="project-card">
           <a href="smells-like-home.html">
             <img src="images/_H5A9955.JPG" alt="Smells Like Home!" loading="lazy">
-            <p class="project-kicker"><span>06 / Installation</span><span>July 2025</span></p>
-            <h2>Smells Like Home!</h2>
-            <p class="project-summary">An exploration of scent as an intimate archive, tracing how smell can evoke memory, belonging, and the emotional geography of home.</p>
-            <p class="project-date">Mixed-media installation</p></a>
+            <div class="project-overlay"><span>July 2025 · Installation</span><h2>Smells Like Home!</h2></div>
+          </a>
         </article>
-
         <article class="project-card">
           <a href="tracing-absence.html">
             <img src="images/IMG_9007-10.jpg" alt="Tracing Absence" loading="lazy">
-            <p class="project-kicker"><span>07 / Installation</span><span>November 2024</span></p>
-            <h2>Tracing Absence</h2>
-            <p class="project-summary">A mixed-media work combining a family voice, photo transfers, and cyanotypes to reflect on loss and longing.</p>
-            <p class="project-date">Video · Photo transfer · Cyanotype</p></a>
+            <div class="project-overlay"><span>November 2024 · Installation</span><h2>Tracing Absence</h2></div>
+          </a>
         </article>
       </div>
+      <p class="carousel-hint">Hover over an image to reveal the project title and date. Select an image to explore the project.</p>
     </section>
   </main>
 
