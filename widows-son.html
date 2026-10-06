@@ -5,314 +5,242 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A Widow's Son — Sadiq Al-Harasi</title>
-  <meta name="description" content="A Widow's Son, a photographic exploration of masculinity, childhood, fatherhood and social expectations by Sadiq Al-Harasi.">
 
   <style>
     :root {
-      --paper: #f8f7f4;
-      --ink: #242420;
-      --muted: #77766f;
-      --line: #dedcd5;
+      --paper: #f7f6f2;
+      --ink: #242321;
+      --muted: #77746e;
+      --line: #dedbd4;
     }
-    
-.image-carousel {
-  width: 100%;
-  margin: 32px 0 48px;
-}
 
-.carousel-stage {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.carousel-stage img {
-  display: block;
-  width: 100%;
-  height: 62vh;
-  max-height: 680px;
-  min-height: 300px;
-  object-fit: contain;
-  background: transparent;
-}
-
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #d8d5cf;
-  border-radius: 50%;
-  background: #f7f6f2;
-  color: #222;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.carousel-arrow:hover {
-  background: #eae7e0;
-}
-
-.carousel-arrow.previous {
-  left: 12px;
-}
-
-.carousel-arrow.next {
-  right: 12px;
-}
-
-.carousel-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 12px;
-  font-size: 12px;
-  color: #555;
-}
-
-@media (max-width: 600px) {
-  .carousel-stage img {
-    height: 52vh;
-    min-height: 240px;
-  }
-
-  .carousel-arrow {
-    width: 34px;
-    height: 34px;
-  }
-
-  .carousel-arrow.previous {
-    left: 6px;
-  }
-
-  .carousel-arrow.next {
-    right: 6px;
-  }
-}
-
-
-    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       background: var(--paper);
       color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
-    a:hover { opacity: 0.6; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .site-header {
-      padding: 25px 5vw;
+      min-height: 76px;
+      padding: 20px 5%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 24px;
       border-bottom: 1px solid var(--line);
     }
 
-    .site-name { font-size: 15px; font-weight: 600; }
+    .site-name {
+      font-weight: 600;
+      white-space: nowrap;
+    }
 
     .navigation {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
       gap: 24px;
       font-size: 13px;
     }
 
-    .dropdown { position: relative; }
-
-    .dropdown summary {
-      cursor: pointer;
-      list-style: none;
+    .navigation a:hover {
+      opacity: 0.6;
     }
-
-    .dropdown summary::-webkit-details-marker { display: none; }
-    .dropdown summary::after { content: " ↓"; font-size: 11px; }
-
-    .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      z-index: 10;
-      width: 300px;
-      max-width: 85vw;
-      max-height: 70vh;
-      overflow-y: auto;
-      padding: 18px;
-      margin-top: 12px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .dropdown[open] .dropdown-menu { display: flex; }
-
-    .dropdown-menu .menu-heading {
-      margin: 8px 0 2px;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .dropdown-menu a { font-size: 12px; line-height: 1.5; }
 
     main {
-  padding-top: 24px;
-}
+      width: 90%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 38px 0 64px;
+    }
 
-.project-intro {
-  margin-bottom: 20px;
-}
-
-
-    .project-heading {
+    .project-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(220px, 0.65fr);
-      gap: 40px;
-      align-items: end;
-      margin-bottom: 42px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+      gap: 7%;
+      align-items: start;
     }
 
-    h1 {
-      font-size: clamp(36px, 5vw, 64px);
-      font-weight: 400;
-      letter-spacing: -0.045em;
-      line-height: 1.05;
-      margin: 0 0 16px;
-    }
-
-    .metadata {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .project-description {
-      max-width: 640px;
-      margin-left: auto;
-      font-size: 15px;
-      line-height: 1.85;
-    }
-
-    .project-description p { margin: 0 0 22px; }
-
-    
-
-<section class="image-carousel" aria-label="A Widow's Son photo gallery">
-  <div class="carousel-stage">
-    <button class="carousel-arrow previous" aria-label="Previous photograph">
-      &#8592;
-    </button>
-
-    <img
-      id="carousel-image"
-      src="images/001.jpg"
-      alt="A Widow's Son — photograph 1 of 8"
-    />
-
-    <button class="carousel-arrow next" aria-label="Next photograph">
-      &#8594;
-    </button>
-  </div>
-
-  <div class="carousel-footer">
-    <span id="carousel-counter">01 / 08</span>
-    <span>A Widow's Son, 2026</span>
-  </div>
-</section>
-
-<script>
-  const images = [
-    "images/001.jpg",
-    "images/002.jpg",
-    "images/003.jpg",
-    "images/004.jpg",
-    "images/005.jpg",
-    "images/006.jpg",
-    "images/007.jpg",
-    "images/008.jpg"
-  ];
-
-  let currentIndex = 0;
-
-  const imageElement = document.getElementById("carousel-image");
-  const counterElement = document.getElementById("carousel-counter");
-  const previousButton = document.querySelector(".carousel-arrow.previous");
-  const nextButton = document.querySelector(".carousel-arrow.next");
-
-  function showImage(index) {
-    currentIndex = (index + images.length) % images.length;
-    imageElement.src = images[currentIndex];
-    imageElement.alt =
-      `A Widow's Son — photograph ${currentIndex + 1} of ${images.length}`;
-    counterElement.textContent =
-      `${String(currentIndex + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
-  }
-
-  previousButton.addEventListener("click", () => {
-    showImage(currentIndex - 1);
-  });
-
-  nextButton.addEventListener("click", () => {
-    showImage(currentIndex + 1);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") showImage(currentIndex - 1);
-    if (event.key === "ArrowRight") showImage(currentIndex + 1);
-  });
-</script>
-
-
-    .gallery figcaption {
-      padding-top: 8px;
-      color: var(--muted);
-      font-size: 11px;
+    .project-info {
+      min-width: 0;
     }
 
     .back-link {
       display: inline-block;
-      margin-top: 60px;
-      font-size: 12px;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 20px 5vw;
+      margin-bottom: 28px;
       color: var(--muted);
       font-size: 12px;
     }
 
-    @media (max-width: 700px) {
+    .back-link:hover {
+      color: var(--ink);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 3.2vw, 46px);
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+
+    .project-meta {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .project-description p {
+      margin: 0 0 18px;
+    }
+
+    .project-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .carousel {
+      position: sticky;
+      top: 24px;
+      min-width: 0;
+      margin-top: 4px;
+    }
+
+    .image-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: min(64vh, 570px);
+      min-height: 280px;
+    }
+
+    .image-stage img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 18px;
+      cursor: pointer;
+      opacity: 0.92;
+    }
+
+    .carousel-arrow:hover {
+      background: white;
+    }
+
+    .carousel-arrow:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    .previous {
+      left: 8px;
+    }
+
+    .next {
+      right: 8px;
+    }
+
+    .image-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .image-counter {
+      font-variant-numeric: tabular-nums;
+    }
+
+    footer {
+      padding: 20px 5%;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    @media (max-width: 760px) {
       .site-header {
         align-items: flex-start;
         flex-direction: column;
-        gap: 15px;
+        gap: 14px;
       }
 
-      .navigation { gap: 15px; }
+      .navigation {
+        gap: 16px;
+      }
 
-      main { padding-top: 35px; }
+      main {
+        width: 90%;
+        padding-top: 24px;
+      }
 
-      .project-heading {
+      .project-layout {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 28px;
       }
 
-      .project-description { margin-left: 0; }
-      .gallery { margin-top: 45px; gap: 20px; }
+      .project-info {
+        order: 1;
+      }
+
+      .carousel {
+        position: relative;
+        top: auto;
+        order: 2;
+        margin-top: 0;
+      }
+
+      .image-stage {
+        height: 52vh;
+        min-height: 240px;
+        max-height: 460px;
+      }
+
+      .back-link {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
     }
   </style>
 </head>
@@ -322,23 +250,7 @@
     <a class="site-name" href="index.html">Sadiq Al-Harasi</a>
 
     <nav class="navigation" aria-label="Main navigation">
-      <details class="dropdown">
-        <summary>Projects</summary>
-        <div class="dropdown-menu">
-          <a href="projects.html">All projects — overview</a>
-
-          <p class="menu-heading">Documentary Photography</p>
-          <a href="widows-son.html">A Widow's Son (2026)</a>
-          <a href="exile.html">In Exile, You Have No Memory (2026)</a>
-          <a href="normal-life.html">As a Lie, As a Dream (Finding a Normal Life)</a>
-          <a href="fathers.html">What Do Fathers Leave Behind?</a>
-          <a href="revisioning-roads.html">Revisioning Roads (2023)</a>
-
-          <p class="menu-heading">Installations</p>
-          <a href="smells-like-home.html">Smells Like Home!</a>
-          <a href="tracing-absence.html">Tracing Absence</a>
-        </div>
-      </details>
+      <a href="projects.html">Projects ↓</a>
       <a href="curating.html">Curating</a>
       <a href="about.html">About</a>
       <a href="cv.html">CV</a>
@@ -347,66 +259,163 @@
   </header>
 
   <main>
-    <section class="project-heading">
-      <div>
+    <div class="project-layout">
+
+      <section class="project-info">
+        <a class="back-link" href="projects.html">← All projects</a>
+
         <h1>A Widow's Son</h1>
-        <div class="metadata">
+
+        <p class="project-meta">
           2026<br>
-          Digital photography, crossword, text, hand-woven photographic work and new media
+          Digital Photography, Crossword, Text, Hand-woven
+          Photographic Work and New Media
+        </p>
+
+        <div class="project-description">
+          <p><em>A Widow’s Son</em>, is a visual
+            exploration of masculinity, childhood, the absence of the
+            father, and the experiences that have shaped my understanding
+            of society’s expectations of manhood. It stems from my
+            experience as a Yemeni man from a tribal region in northern
+            Yemen, where I grew up within specific social expectations
+            and traditional frameworks that influenced how I understood
+            the identity I was expected to embody.
+          </p>
+
+          <p>
+            Within this project, I’m trying to understand these patterns
+            as a Yemeni man who was raised primarily by my mother after
+            my father died when I was eleven. When he passed away, many
+            people told me not to cry, claiming that men do not cry. In
+            that moment, I was told that I had become a man: “You are now
+            the man of the house.”
+          </p>
+
+          <p>
+            During my primary and secondary school years, I rarely left
+            home. When I eventually began to go out and encounter the
+            world beyond it, I encountered forms of behaviour, language,
+            and social expectations that had been largely absent from my
+            upbringing. A central element was the conventional image of
+            masculinity. I experienced moments in which my identity,
+            speech, or behaviour was mocked, or in which my manhood was
+            questioned or belittled. Through this project, I'm trying to
+            understand, question, and negotiate my relationship with
+            masculinity, while also documenting a personal experience
+            through photography, writing, games, and conversations with
+            friends.
+          </p>
+
+          <p>
+            The project combines self-portraits with textual elements
+            that reflect words and expectations I have encountered
+            throughout my life, including phrases spoken directly to me
+            and Arabic terms that function as synonyms, opposites, or
+            associations of masculinity and manhood. I'm trying to
+            create a dialogue between the self-portraits and these
+            words, exploring how language and repeated expectations
+            can influence a person’s understanding of themselves over
+            time.
+          </p>
+
+          <p>
+            It also explores the sense of deficiency associated with
+            the title <em>A Widow’s Son</em>, alongside the ways in which
+            social expectations and traditional patterns become
+            embedded in our identities. It is an attempt to examine
+            some of the characteristics, behaviours, and practices
+            that I encountered as markers of masculinity within my
+            social environment. The project doesn’t attempt to define
+            Yemeni masculinity. It investigates one person's experience
+            of learning, performing, questioning and reconstructing
+            masculinity within several cultural contexts.
+          </p>
         </div>
-      </div>
+      </section>
 
-      <div class="project-description">
-        <p><em>A Widow’s Son</em>, is a visual exploration of masculinity, childhood, the absence of the father, and the experiences that have shaped my understanding of society’s expectations of manhood. It stems from my experience as a Yemeni man from a tribal region in northern Yemen, where I grew up within specific social expectations and traditional frameworks that influenced how I understood the identity I was expected to embody.</p>
+      <section class="carousel" aria-label="Project photographs">
+        <div class="image-stage">
+          <button
+            class="carousel-arrow previous"
+            type="button"
+            aria-label="Previous photograph"
+          >&#8592;</button>
 
-        <p>Within this project, I’m trying to understand these patterns as a Yemeni man who was raised primarily by my mother after my father died when I was eleven. When he passed away, many people told me not to cry, claiming that men do not cry. In that moment, I was told that I had become a man: “You are now the man of the house.”</p>
+          <img
+            id="project-image"
+            src="images/001.jpg"
+            alt="A Widow's Son — photograph 1 of 8"
+          >
 
-        <p>During my primary and secondary school years, I rarely left home. When I eventually began to go out and encounter the world beyond it, I encountered forms of behaviour, language, and social expectations that had been largely absent from my upbringing. A central element was the conventional image of masculinity. I experienced moments in which my identity, speech, or behaviour was mocked, or in which my manhood was questioned or belittled. Through this project, I'm trying to understand, question, and negotiate my relationship with masculinity, while also documenting a personal experience through photography, writing, games, and conversations with friends.</p>
+          <button
+            class="carousel-arrow next"
+            type="button"
+            aria-label="Next photograph"
+          >&#8594;</button>
+        </div>
 
-        <p>The project combines self-portraits with textual elements that reflect words and expectations I have encountered throughout my life, including phrases spoken directly to me and Arabic terms that function as synonyms, opposites, or associations of masculinity and manhood. I'm trying to create a dialogue between the self-portraits and these words, exploring how language and repeated expectations can influence a person’s understanding of themselves over time.</p>
+        <div class="image-caption">
+          <span>A Widow's Son, 2026</span>
+          <span class="image-counter" id="image-counter"
+            aria-live="polite">01 / 08</span>
+        </div>
+      </section>
 
-        <p>It also explores the sense of deficiency associated with the title <em>A Widow’s Son</em>, alongside the ways in which social expectations and traditional patterns become embedded in our identities. It is an attempt to examine some of the characteristics, behaviours, and practices that I encountered as markers of masculinity within my social environment. The project doesn’t attempt to define Yemeni masculinity. It investigates one person's experience of learning, performing, questioning and reconstructing masculinity within several cultural contexts.</p>
-      </div>
-    </section>
-
-    <section class="gallery" aria-label="Project photographs">
-      <figure>
-        <img src="images/001.jpg" alt="A Widow's Son — photograph 1" loading="lazy">
-        <figcaption>A Widow's Son, 2026</figcaption>
-      </figure>
-      <figure>
-        <img src="images/002.jpg" alt="A Widow's Son — photograph 2" loading="lazy">
-        <figcaption>A Widow's Son, 2026</figcaption>
-      </figure>
-      <figure>
-        <img src="images/003.jpg" alt="A Widow's Son — photograph 3" loading="lazy">
-        <figcaption>A Widow's Son, 2026</figcaption>
-      </figure>
-      <figure>
-        <img src="images/004.jpg" alt="A Widow's Son — photograph 4" loading="lazy">
-        <figcaption>A Widow's Son, 2026</figcaption>
-      </figure>
-      <figure>
-        <img src="images/005.jpg" alt="A Widow's Son — photograph 5" loading="lazy">
-        <figcaption>A Widow's Son, 2026</figcaption>
-      </figure>
-      <figure>
-        <img src="images/006.jpg" alt="A Widow's Son — photograph 6" loading="lazy">
-        <figcaption>A Widow's Son, 2026</figcaption>
-      </figure>
-      <figure>
-        <img src="images/007.jpg" alt="A Widow's Son — photograph 7" loading="lazy">
-        <figcaption>A Widow's Son, 2026</figcaption>
-      </figure>
-      <figure>
-        <img src="images/008.jpg" alt="A Widow's Son — photograph 8" loading="lazy">
-        <figcaption>A Widow's Son, 2026</figcaption>
-      </figure>
-    </section>
-
-    <a class="back-link" href="projects.html">← Back to all projects</a>
+    </div>
   </main>
 
-  <footer>Sadiq Al-Harasi · Aarhus, Denmark</footer>
+  <footer>
+    © Sadiq Al-Harasi
+  </footer>
+
+  <script>
+    const projectImages = [
+      "images/001.jpg",
+      "images/002.jpg",
+      "images/003.jpg",
+      "images/004.jpg",
+      "images/005.jpg",
+      "images/006.jpg",
+      "images/007.jpg",
+      "images/008.jpg"
+    ];
+
+    let activeImage = 0;
+
+    const projectImage = document.getElementById("project-image");
+    const imageCounter = document.getElementById("image-counter");
+    const previousButton = document.querySelector(".carousel-arrow.previous");
+    const nextButton = document.querySelector(".carousel-arrow.next");
+
+    function updateImage(index) {
+      activeImage = (index + projectImages.length) % projectImages.length;
+
+      projectImage.src = projectImages[activeImage];
+      projectImage.alt =
+        `A Widow's Son — photograph ${activeImage + 1} of ${projectImages.length}`;
+
+      imageCounter.textContent =
+        `${String(activeImage + 1).padStart(2, "0")} / ${String(projectImages.length).padStart(2, "0")}`;
+    }
+
+    previousButton.addEventListener("click", () => {
+      updateImage(activeImage - 1);
+    });
+
+    nextButton.addEventListener("click", () => {
+      updateImage(activeImage + 1);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        updateImage(activeImage - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        updateImage(activeImage + 1);
+      }
+    });
+  </script>
 </body>
 </html>
