@@ -29,6 +29,18 @@
     h2 { font-size:16px; font-weight:500; margin:0 0 18px; }
     p { margin:0 0 16px; }
     .muted { color:var(--muted); }
+
+    .curatorial-projects { margin-top:8px; }
+    .curatorial-project { padding:28px 0 34px; border-bottom:1px solid var(--line); }
+    .curatorial-project:first-child { padding-top:4px; }
+    .project-kicker { color:var(--muted); font-size:11px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px; }
+    .curatorial-project h3 { font-size:clamp(22px,3vw,30px); line-height:1.2; font-weight:400; letter-spacing:-.025em; margin:0 0 14px; }
+    .project-details { color:var(--muted); font-size:12px; line-height:1.8; margin-bottom:20px; }
+    .project-details span { display:block; }
+    .project-description { max-width:700px; }
+    .project-description a { text-decoration:underline; text-underline-offset:3px; }
+    .project-note { color:var(--muted); font-size:12px; margin-top:18px; }
+
     .cv-item { display:grid; grid-template-columns:150px 1fr; gap:22px; margin:0 0 22px; }
     .cv-year { color:var(--muted); }
     footer { border-top:1px solid var(--line); padding:20px 5vw; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:12px; }
@@ -85,10 +97,41 @@
       <p>Whether working with historical collections, personal archives, or newly commissioned works, I approach curating as the construction of relationships between artworks, people, and space. Rather than producing fixed interpretations, I seek to create exhibitions that activate overlooked narratives through spatial relationships. This approach creates space for negotiation, allowing diverse histories and lived experiences to coexist without collapsing into a single narrative.</p>
     </section>
     <section>
-      <h2>Selected projects</h2>
-      <div class="cv-item"><div class="cv-year">2025</div><div><strong>Sawa</strong><br><span class="muted">Curator · Amman, Jordan</span></div></div>
-      <div class="cv-item"><div class="cv-year">2024</div><div><strong>Roots of Identity</strong><br><span class="muted">Curator · Amman, Jordan</span></div></div>
-      <div class="cv-item"><div class="cv-year">—</div><div><strong>Mayciulum interdisciplinary residency</strong><br><span class="muted">Guest curator</span></div></div>
+      <h2>Selected curatorial projects</h2>
+      <div class="curatorial-projects">
+        <article class="curatorial-project">
+          <p class="project-kicker">Photography exhibition · 2024</p>
+          <h3>Roots of Identity</h3>
+          <div class="project-details">
+            <span>Jordan National Gallery of Fine Arts · Amman, Jordan</span>
+            <span>Goethe-Institut – EU</span>
+            <span>Curator</span>
+          </div>
+          <div class="project-description">
+            <p><em><a href="https://www.goethe.de/ins/jo/en/kul/jem/rit.html" target="_blank" rel="noopener noreferrer">Roots of Identity: Yemeni Photo Exhibition</a></em> explores Yemen’s cultural heritage and the histories, landscapes, people, traditions, architecture, and artistic practices that shape Yemeni identity.</p>
+            <p>Bringing together photographic perspectives on Yemen, the exhibition considers how cultural identity can be imagined and represented amid conflict and disruption. It positions art as a means of communication and resistance: a way for Yemeni artists to tell contemporary stories, challenge reductive representations of the country, and create space for understanding, peace, and social connection.</p>
+          </div>
+        </article>
+        <article class="curatorial-project">
+          <p class="project-kicker">Mixed-media exhibition · 2025</p>
+          <h3>SAWA</h3>
+          <div class="project-details">
+            <span>Jordan National Gallery of Fine Arts · Amman, Jordan</span>
+            <span>Goethe-Institut – CARPO</span>
+            <span>Curator</span>
+          </div>
+          <div class="project-description">
+            <p><em>SAWA</em>—Arabic for “together”—brings together the outcomes of two cultural projects in Yemen with work by thirteen emerging Yemeni artists and practitioners. Across photography, film, comics, illustration, podcasts, music, and community practice, the exhibition explores how creative voices build connections in challenging circumstances.</p>
+            <p>Rather than presenting a single narrative, <em>SAWA</em> brings together projects shaped by creative hubs, academic exchanges, and workshops. It understands culture not as a luxury, but as a way to document lived experiences, bring communities together, make participation possible, and imagine shared futures.</p>
+          </div>
+        </article>
+        <article class="curatorial-project">
+          <p class="project-kicker">Interdisciplinary residency</p>
+          <h3>Mayciulum</h3>
+          <div class="project-details"><span>Guest curator</span></div>
+        </article>
+      </div>
+      <p class="project-note">Exhibition photographs can be added to each project entry to document the installation and display.</p>
     </section>
   </div>
 </main>
