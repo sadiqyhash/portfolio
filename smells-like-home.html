@@ -339,9 +339,9 @@
           <img src="images/_H5A9955.JPG"
                alt="Smells Like Home! installation photograph 1"
                loading="eager">
-          <img src="images/IH5A9990.JPG"
+          <img src="https://sadiqyhash.github.io/portfolio/images/IH5A9990.JPG"
                alt="Smells Like Home! installation photograph 2"
-               loading="lazy" hidden>
+               loading="eager" hidden>
 
           <button class="image-arrow image-arrow-right" id="next"
                   type="button" aria-label="Next photograph">→</button>
@@ -387,23 +387,6 @@
       if (event.key === "ArrowRight") showImage(currentIndex + 1);
     });
 
-    const projectsNav = document.getElementById("projectsNav");
-    const projectsToggle = document.getElementById("projectsToggle");
-
-    projectsToggle.addEventListener("click", (event) => {
-      if (!projectsNav.classList.contains("open")) {
-        event.preventDefault();
-        projectsNav.classList.add("open");
-        projectsToggle.setAttribute("aria-expanded", "true");
-      }
-    });
-
-    document.addEventListener("click", (event) => {
-      if (!projectsNav.contains(event.target)) {
-        projectsNav.classList.remove("open");
-        projectsToggle.setAttribute("aria-expanded", "false");
-      }
-    });
 
     showImage(0);
   </script>
