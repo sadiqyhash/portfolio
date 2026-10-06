@@ -196,3 +196,19 @@ details.dropdown:not([open]) > .dropdown-menu { display: none; }
   .lightbox-prev { left: 5px; }
   .lightbox-next { right: 5px; }
 }
+
+
+/* Project titles sit in the information column on every project page */
+.project-text h1, .project-info h1 {
+  color: var(--ink);
+  font-size: clamp(30px, 3.2vw, 46px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin: 0 0 18px;
+}
+.project-text > .year { margin: 0 0 26px; }
+.project-text > .project-meta { margin-top: 24px; }
+.image-stage img, #project-image {
+  cursor: zoom-in;
+}
