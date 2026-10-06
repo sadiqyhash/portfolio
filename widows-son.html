@@ -14,6 +14,89 @@
       --muted: #77766f;
       --line: #dedcd5;
     }
+    
+.image-carousel {
+  width: 100%;
+  margin: 32px 0 48px;
+}
+
+.carousel-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.carousel-stage img {
+  display: block;
+  width: 100%;
+  height: 62vh;
+  max-height: 680px;
+  min-height: 300px;
+  object-fit: contain;
+  background: transparent;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d8d5cf;
+  border-radius: 50%;
+  background: #f7f6f2;
+  color: #222;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.carousel-arrow:hover {
+  background: #eae7e0;
+}
+
+.carousel-arrow.previous {
+  left: 12px;
+}
+
+.carousel-arrow.next {
+  right: 12px;
+}
+
+.carousel-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .carousel-stage img {
+    height: 52vh;
+    min-height: 240px;
+  }
+
+  .carousel-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .carousel-arrow.previous {
+    left: 6px;
+  }
+
+  .carousel-arrow.next {
+    right: 6px;
+  }
+}
+
 
     * { box-sizing: border-box; }
 
@@ -126,33 +209,72 @@
     .project-description p { margin: 0 0 22px; }
 
     
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 28px;
-}
 
-.gallery figure {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-}
+<section class="image-carousel" aria-label="A Widow's Son photo gallery">
+  <div class="carousel-stage">
+    <button class="carousel-arrow previous" aria-label="Previous photograph">
+      &#8592;
+    </button>
 
-.gallery img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  background: transparent;
-}
+    <img
+      id="carousel-image"
+      src="images/001.jpg"
+      alt="A Widow's Son — photograph 1 of 8"
+    />
 
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    <button class="carousel-arrow next" aria-label="Next photograph">
+      &#8594;
+    </button>
+  </div>
+
+  <div class="carousel-footer">
+    <span id="carousel-counter">01 / 08</span>
+    <span>A Widow's Son, 2026</span>
+  </div>
+</section>
+
+<script>
+  const images = [
+    "images/001.jpg",
+    "images/002.jpg",
+    "images/003.jpg",
+    "images/004.jpg",
+    "images/005.jpg",
+    "images/006.jpg",
+    "images/007.jpg",
+    "images/008.jpg"
+  ];
+
+  let currentIndex = 0;
+
+  const imageElement = document.getElementById("carousel-image");
+  const counterElement = document.getElementById("carousel-counter");
+  const previousButton = document.querySelector(".carousel-arrow.previous");
+  const nextButton = document.querySelector(".carousel-arrow.next");
+
+  function showImage(index) {
+    currentIndex = (index + images.length) % images.length;
+    imageElement.src = images[currentIndex];
+    imageElement.alt =
+      `A Widow's Son — photograph ${currentIndex + 1} of ${images.length}`;
+    counterElement.textContent =
+      `${String(currentIndex + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
   }
-}
+
+  previousButton.addEventListener("click", () => {
+    showImage(currentIndex - 1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    showImage(currentIndex + 1);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") showImage(currentIndex - 1);
+    if (event.key === "ArrowRight") showImage(currentIndex + 1);
+  });
+</script>
+
 
     .gallery figcaption {
       padding-top: 8px;
@@ -235,7 +357,7 @@
       </div>
 
       <div class="project-description">
-        <p>My personal project, <em>A Widow’s Son</em>, is a visual exploration of masculinity, childhood, the absence of the father, and the experiences that have shaped my understanding of society’s expectations of manhood. It stems from my experience as a Yemeni man from a tribal region in northern Yemen, where I grew up within specific social expectations and traditional frameworks that influenced how I understood the identity I was expected to embody.</p>
+        <p><em>A Widow’s Son</em>, is a visual exploration of masculinity, childhood, the absence of the father, and the experiences that have shaped my understanding of society’s expectations of manhood. It stems from my experience as a Yemeni man from a tribal region in northern Yemen, where I grew up within specific social expectations and traditional frameworks that influenced how I understood the identity I was expected to embody.</p>
 
         <p>Within this project, I’m trying to understand these patterns as a Yemeni man who was raised primarily by my mother after my father died when I was eleven. When he passed away, many people told me not to cry, claiming that men do not cry. In that moment, I was told that I had become a man: “You are now the man of the house.”</p>
 
