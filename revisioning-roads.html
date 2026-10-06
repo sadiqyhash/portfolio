@@ -128,8 +128,8 @@
 
     .project-layout {
       display: grid;
-      grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.5fr);
-      gap: 5%;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 64px);
       align-items: start;
     }
 
@@ -142,11 +142,12 @@
     }
 
     .project-text .project-meta {
-      margin-top: 28px;
-      padding-top: 13px;
-      border-top: 1px solid var(--line);
+      margin-top: 24px;
+      padding-top: 0;
+      border: 0;
       color: var(--muted);
-      font-size: 11px;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
     .image-area {
@@ -209,8 +210,8 @@
       display: flex;
       justify-content: flex-end;
       margin-top: 13px;
-      padding-top: 10px;
-      border-top: 1px solid var(--line);
+      padding-top: 0;
+      border: 0;
     }
 
     .counter {
