@@ -1,319 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Sadiq Al-Harasi — Artist & Photographer</title>
-  <meta name="description" content="Portfolio of Sadiq Al-Harasi, a Yemeni photographer, artist and curator based in Denmark.">
-
+  <meta name="theme-color" content="#080808">
+  <title>Sadiq Al-Harasi — Visual Storyteller</title>
+  <meta name="description" content="Sadiq Al-Harasi — Visual Storyteller.">
   <style>
-    :root {
-      --paper: #080808;
-      --ink: #f2f0ea;
-      --muted: #aaa7a0;
-      --line: #343434;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html, body { width: 100%; min-height: 100%; margin: 0; }
     body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
+      min-height: 100vh;
+      min-height: 100svh;
+      background: #080808;
+      color: #f2f0ea;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      line-height: 1.6;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:hover {
-      opacity: 0.6;
-    }
-
-    .site-header {
-      padding: 25px 5vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .site-name {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-    }
-
-    .navigation {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      font-size: 13px;
-   
-    .dropdown {
+    .entry {
       position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: flex-end;
+      min-height: 100vh;
+      min-height: 100svh;
+      width: 100%;
+      overflow: hidden;
+      background: #080808;
     }
-
-    .dropdown summary {
-      cursor: pointer;
-      list-style: none;
-    }
-
-    .dropdown summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .dropdown summary::after {
-      content: " ↓";
-      font-size: 11px;
-    }
-
-    .dropdown-menu {
+    .entry-image {
       position: absolute;
-      top: 100%;
-      right: 0;
-      z-index: 10;
-      width: 300px;
-      max-width: 85vw;
-      max-height: 70vh;
-      overflow-y: auto;
-      padding: 18px;
-      margin-top: 12px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-  display: flex;
-}
-
-.dropdown:not([open]) .dropdown-menu {
-  display: none;
-}
-
-.dropdown:hover > .dropdown-menu,
-.dropdown:focus-within > .dropdown-menu {
-  display: flex;
-}
-
-.dropdown:not([open]) > .dropdown-menu {
-  display: none;
-}
-
-.dropdown:hover > .dropdown-menu,
-.dropdown[open] > .dropdown-menu {
-  display: flex;
-}
-
-
-    .dropdown-menu .menu-heading {
-      margin: 8px 0 2px;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .dropdown-menu a {
-      font-size: 12px;
-      line-height: 1.5;
-    }
- }
-
-    main {
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 38px 5vw 70px;
-    }
-
-    .introduction {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-
-    .introduction h1 {
-      font-size: clamp(26px, 3.5vw, 44px);
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      margin: 0;
-    }
-
-    .introduction p {
-      color: var(--muted);
-      margin: 0;
-      max-width: 340px;
-    }
-
-    .hero-image {
-      margin: 0;
+      inset: 0;
+      z-index: -2;
       width: 100%;
-    }
-
-    .hero-image img {
-      display: block;
-      width: 100%;
-      height: min(68vh, 760px);
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
       object-position: center;
-      background: #eeece7;
     }
-
-    .image-caption {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding-top: 10px;
-      color: var(--muted);
-      font-size: 12px;
+    .entry::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.02) 30%,
+        rgba(0,0,0,0.12) 52%,
+        rgba(0,0,0,0.72) 100%
+      );
     }
-
-    .home-note {
-      max-width: 570px;
-      margin: 65px 0 0 auto;
-      font-size: 16px;
-      line-height: 1.8;
+    .entry-content {
+      width: 100%;
+      padding: clamp(28px, 6vw, 84px);
+      padding-bottom: max(clamp(32px, 7vh, 76px), env(safe-area-inset-bottom));
     }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 20px 5vw;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 12px;
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5.3vw, 4.5rem);
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: -0.045em;
     }
-
-    @media (max-width: 650px) {
-      .site-header {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .navigation {
-        gap: 15px;
-      }
-
-      main {
-        padding-top: 28px;
-      }
-
-      .introduction {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .hero-image img {
-        height: 55vh;
-      }
-
-      .home-note {
-        margin-top: 40px;
-      }
+    .title {
+      margin: 12px 0 28px;
+      color: rgba(242,240,234,0.86);
+      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+      letter-spacing: 0.035em;
     }
-  
-    footer { margin:0 !important; padding:20px 5vw !important; display:flex; align-items:center; justify-content:space-between; gap:20px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; line-height:1.5; }
-    footer span { display:block; }
-
-  
-    details.dropdown { position:relative; }
-    details.dropdown > summary { display:inline-block; cursor:pointer; list-style:none; }
-    details.dropdown > summary::-webkit-details-marker { display:none; }
-    details.dropdown > summary::after { content:" ↓"; font-size:11px; }
-    details.dropdown .dropdown-menu { display:none; position:absolute; z-index:100; top:calc(100% + 6px); left:0; right:auto; width:290px; max-width:85vw; max-height:70vh; overflow-y:auto; padding:18px; background:var(--paper); border:1px solid var(--line); box-shadow:0 8px 22px rgba(0,0,0,.06); }
-    details.dropdown[open] .dropdown-menu { display:flex; flex-direction:column; gap:9px; }
-    details.dropdown .dropdown-menu a { display:block; font-size:12px; line-height:1.5; }
-    details.dropdown .menu-heading { margin:10px 0 2px; color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
-
-  
-    details.dropdown { display:block; position:relative; }
-    details.dropdown > summary { display:inline-block; cursor:pointer; list-style:none; padding:8px 0; white-space:nowrap; }
-    details.dropdown > summary::-webkit-details-marker { display:none; }
-    details.dropdown > summary::after { content:" ↓"; font-size:11px; }
-    details.dropdown .dropdown-menu { display:none; position:absolute; z-index:100; top:calc(100% + 6px); left:0; right:auto; width:290px; max-width:85vw; max-height:70vh; overflow-y:auto; padding:18px; background:var(--paper); border:1px solid var(--line); box-shadow:0 8px 22px rgba(0,0,0,.06); }
-    details.dropdown[open] .dropdown-menu { display:flex; flex-direction:column; gap:9px; }
-    details.dropdown .dropdown-menu a { display:block; font-size:12px; line-height:1.5; }
-    details.dropdown .menu-heading { margin:10px 0 2px; color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
-    .image-caption > span:first-child { display:none !important; }
-
+    .enter {
+      display: inline-flex;
+      min-width: 116px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 25px;
+      border: 1px solid rgba(242,240,234,0.82);
+      color: #f2f0ea;
+      background: rgba(8,8,8,0.12);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+    .enter:hover, .enter:focus-visible {
+      color: #080808;
+      background: #f2f0ea;
+    }
+    .enter:focus-visible {
+      outline: 2px solid #f2f0ea;
+      outline-offset: 4px;
+    }
+    @media (max-width: 600px) {
+      .entry-image { object-position: center; }
+      .entry-content { padding: 26px; padding-bottom: max(34px, env(safe-area-inset-bottom)); }
+      h1 { font-size: clamp(2.1rem, 10vw, 3.2rem); }
+      .title { margin-top: 10px; margin-bottom: 24px; }
+      .enter { min-width: 108px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .enter { transition: none; }
+    }
   </style>
-  <link rel="stylesheet" href="theme.css">
 </head>
-
 <body>
-
-  <header class="site-header">
-    <a class="site-name" href="index.html">Sadiq Al-Harasi</a>
-    <nav class="navigation" aria-label="Main navigation">
-      <details class="dropdown">
-        <summary>Works</summary>
-        <div class="dropdown-menu">
-          <a href="projects.html">Selected work</a>
-          <p class="menu-heading">Documentary Photography</p>
-          <a href="widows-son.html">A Widow's Son</a>
-          <a href="exile.html">In Exile, You Have No Memory</a>
-          <a href="normal-life.html">As a Lie, As a Dream</a>
-          <a href="fathers.html">What Do Fathers Leave Behind?</a>
-          <a href="revisioning-roads.html">Revisioning Roads</a>
-          <p class="menu-heading">Installations</p>
-          <a href="smells-like-home.html">Smells Like Home!</a>
-          <a href="tracing-absence.html">Tracing Absence</a>
-        </div>
-      </details>
-      <a href="curating.html">Curating</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="introduction">
-      <h1>Artist & Photographer</h1>
-      <p>Yemeni artist and photographer based in Denmark.</p>
-    </section>
-
-    <figure class="hero-image">
-      <img
-        src="images/Home_Al-Harasi.jpg"
-        alt="Photograph by Sadiq Al-Harasi"
-      >
-      <figcaption class="image-caption">
-        <span>Selected work</span>
-        <span>Photography · Research · Moving image</span>
-      </figcaption>
-    </figure>
-
-    <section class="home-note">
-      <p>
-        My practice explores memory, identity, belonging and the ways
-        personal and collective histories are preserved, fragmented
-        and retold through images, archives and material processes.
-      </p>
-    </section>
+  <main class="entry">
+    <img
+      class="entry-image"
+      src="images/SYH07245.jpg"
+      alt=""
+      fetchpriority="high"
+    >
+    <div class="entry-content">
+      <h1>Sadiq Al-Harasi</h1>
+      <p class="title">Visual Storyteller</p>
+      <a class="enter" href="fathers.html">Enter</a>
+    </div>
   </main>
-
-  <footer><span>© 2026 Sadiq Al-Harasi</span></footer>
-
 </body>
 </html>
