@@ -181,9 +181,9 @@
     <a class="site-name" href="index.html">Sadiq Al-Harasi</a>
     <nav class="navigation" aria-label="Main navigation">
       <details class="dropdown">
-        <summary>Projects</summary>
+        <summary>Works</summary>
         <div class="dropdown-menu">
-          <a href="projects.html">All projects — overview</a>
+          <a href="projects.html">Selected work</a>
           <p class="menu-heading">Documentary Photography</p>
           <a href="widows-son.html">A Widow's Son</a>
           <a href="exile.html">In Exile, You Have No Memory</a>
@@ -201,14 +201,11 @@
   </header>
 
   <main>
-    <section class="page-heading">
-      <h1>Projects</h1>
 
-</section>
 
     <section class="project-carousel-section" aria-label="Selected projects">
       <div class="carousel-toolbar">
-        <p>Selected work <span>01 — 07</span></p>
+        <p>Selected work</p>
         <div class="carousel-controls">
           <button class="carousel-arrow" type="button" id="carousel-prev" aria-label="Previous projects">←</button>
           <button class="carousel-arrow" type="button" id="carousel-next" aria-label="Next projects">→</button>
@@ -264,5 +261,14 @@
 
   <footer><span>© 2026 Sadiq Al-Harasi</span></footer>
 
+  <script>
+    const carousel = document.getElementById("project-carousel");
+    document.getElementById("carousel-prev").addEventListener("click", () => {
+      carousel.scrollBy({ left: -carousel.clientWidth * 0.8, behavior: "smooth" });
+    });
+    document.getElementById("carousel-next").addEventListener("click", () => {
+      carousel.scrollBy({ left: carousel.clientWidth * 0.8, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
