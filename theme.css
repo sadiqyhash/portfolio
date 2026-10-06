@@ -43,3 +43,17 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px soli
   .site-header, header { align-items: flex-start; flex-direction: column; gap: 14px; }
   .navigation, nav { flex-wrap: wrap; gap: 14px 18px; }
 }
+
+/* Final overrides for legacy page-specific rules */
+.hero-image,
+.image-stage,
+.image-area,
+.image-stage img,
+.image-area img,
+.project-card,
+.project-tile,
+.card,
+.project-image,
+.image-container {
+  background: var(--paper) !important;
+}
