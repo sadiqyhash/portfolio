@@ -265,6 +265,10 @@
     footer { margin:0 !important; padding:20px 5vw !important; display:flex; align-items:center; justify-content:space-between; gap:20px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; line-height:1.5; }
     footer span { display:block; }
 
+  
+    .project-meta p { margin:0 0 8px; }
+    .meta-label { display:inline-block; min-width:112px; color:var(--ink); }
+    .project-copy-label { margin:26px 0 14px; font-size:11px; font-weight:400; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
   </style>
   <link rel="stylesheet" href="theme.css">
 </head>
@@ -300,7 +304,8 @@
       <article class="project-text">
         <a class="back-link" href="projects.html">← All projects</a>
         <h1>What Do Fathers Leave Behind?</h1>
-        <p class="project-meta">2023–Ongoing</p>
+        <div class="project-meta"><p><span class="meta-label">Date</span> 2023 — Ongoing</p><p><span class="meta-label">Format / Medium</span> Documentary photography, family archive, sound, and text</p></div>
+        <h2 class="project-copy-label">Text</h2>
         <p>
           I’ve spent my life searching for my father, trying to piece together
           the fragments he left behind. I’ve longed to hear his stories, his
@@ -356,9 +361,7 @@
           to create an experimental memory landscape.
         </p>
 
-        <div class="project-meta">
-          Documentary photography · Family archive · Memory · Identity
-        </div>
+        
       </article>
 
       <section class="image-area" aria-label="Project photographs">
