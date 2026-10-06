@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curating — Sadiq Al-Harasi</title>
+<meta name="description" content="Curatorial practice and selected projects by Sadiq Al-Harasi.">
+
+  <style>
+    :root { color-scheme: dark; --paper:#080808; --ink:#f2f0ea; --muted:#aaa7a0; --line:#343434; }
+    * { box-sizing:border-box; }
+    html { background:var(--paper); scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:14px/1.7 Arial,Helvetica,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    a:hover { opacity:.65; }
+    .site-header { padding:22px 5vw; display:flex; justify-content:space-between; align-items:center; gap:24px; border-bottom:1px solid var(--line); }
+    .site-name { font-size:15px; font-weight:600; white-space:nowrap; }
+    .navigation { display:flex; align-items:center; flex-wrap:wrap; gap:22px; font-size:13px; }
+    .dropdown { position:relative; }
+    .dropdown summary { cursor:pointer; list-style:none; white-space:nowrap; }
+    .dropdown summary::-webkit-details-marker { display:none; }
+    .dropdown summary::after { content:" ↓"; font-size:11px; }
+    .dropdown-menu { position:absolute; top:100%; right:0; z-index:10; width:300px; max-width:85vw; max-height:70vh; overflow-y:auto; margin-top:12px; padding:18px; background:#111; border:1px solid var(--line); display:none; flex-direction:column; gap:10px; }
+    .dropdown[open] > .dropdown-menu, .dropdown:hover > .dropdown-menu, .dropdown:focus-within > .dropdown-menu { display:flex; }
+    .dropdown-menu .menu-heading { margin:8px 0 2px; color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+    main { max-width:1100px; margin:0 auto; padding:clamp(44px,8vw,100px) 5vw 100px; }
+    .eyebrow { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.12em; margin:0 0 18px; }
+    h1 { font-weight:400; font-size:clamp(36px,6vw,68px); letter-spacing:-.045em; line-height:1.05; margin:0 0 48px; max-width:850px; }
+    .lead { font-size:clamp(18px,2.2vw,23px); line-height:1.65; max-width:760px; }
+    .content { max-width:720px; }
+    section { padding:30px 0; border-top:1px solid var(--line); }
+    h2 { font-size:16px; font-weight:500; margin:0 0 18px; }
+    p { margin:0 0 16px; }
+    .muted { color:var(--muted); }
+    .cv-item { display:grid; grid-template-columns:150px 1fr; gap:22px; margin:0 0 22px; }
+    .cv-year { color:var(--muted); }
+    footer { border-top:1px solid var(--line); padding:20px 5vw; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:12px; }
+    @media(max-width:650px) {
+      .site-header { align-items:flex-start; flex-direction:column; gap:15px; }
+      .navigation { gap:14px 18px; }
+      .cv-item { grid-template-columns:1fr; gap:3px; }
+      footer { flex-direction:column; gap:5px; }
+    }
+  </style>
+<link rel="stylesheet" href="theme.css"></head><body>
+<header class="site-header">
+    <a class="site-name" href="index.html">Sadiq Al-Harasi</a>
+    <nav class="navigation" aria-label="Main navigation">
+      <details class="dropdown">
+        <summary>Projects</summary>
+        <div class="dropdown-menu">
+          <a href="projects.html">All projects — overview</a>
+          <p class="menu-heading">Documentary Photography</p>
+          <a href="widows-son.html">A Widow's Son</a>
+          <a href="exile.html">In Exile, You Have No Memory</a>
+          <a href="normal-life.html">As a Lie, As a Dream</a>
+          <a href="fathers.html">What Do Fathers Leave Behind?</a>
+          <a href="revisioning-roads.html">Revisioning Roads</a>
+          <p class="menu-heading">Installations</p>
+          <a href="smells-like-home.html">Smells Like Home!</a>
+          <a href="tracing-absence.html">Tracing Absence</a>
+        </div>
+      </details>
+      <a href="curating.html">Curating</a><a href="about.html">About</a><a href="about.html#cv">CV</a><a href="contact.html">Contact</a>
+    </nav>
+  </header>
+<main>
+  <p class="eyebrow">Curatorial practice</p>
+  <h1>Working with space, research and memory.</h1>
+  <div class="content">
+    <p class="lead">My curatorial approach is rooted in spatial thinking, documentary methods and alternative forms of archiving. I understand exhibition-making as a process of research and translation, where the space itself becomes part of the work and exhibition design functions as a form of curatorial writing.</p>
+    <section>
+      <h2>Method</h2>
+      <p>Each project begins with a specific question rather than a broad theme. I develop the question through conversations, site-specific investigation, sustained research, interviews, archival and fieldwork, and exchange with artists, participants and communities.</p>
+      <p>My background in architectural engineering informs how I consider movement, relationships, context and the physical conditions of an exhibition. I approach the exhibition space as a living structure: a place where artworks, documents, voices and audiences encounter one another, and where the arrangement of material shapes how a story can be read.</p>
+      <p>I am interested in curatorial processes that make room for complexity, multiple perspectives and overlooked histories, while remaining attentive to the responsibilities involved in representing people and their experiences.</p>
+    </section>
+    <section>
+      <h2>Selected projects</h2>
+      <div class="cv-item"><div class="cv-year">2025</div><div><strong>Sawa</strong><br><span class="muted">Curator · Amman, Jordan</span></div></div>
+      <div class="cv-item"><div class="cv-year">2024</div><div><strong>Roots of Identity</strong><br><span class="muted">Curator · Amman, Jordan</span></div></div>
+      <div class="cv-item"><div class="cv-year">—</div><div><strong>Mayciulum interdisciplinary residency</strong><br><span class="muted">Guest curator</span></div></div>
+    </section>
+  </div>
+</main>
+<footer><span>Sadiq Al-Harasi</span><span>Aarhus, Denmark</span></footer>
+</body></html>
