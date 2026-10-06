@@ -38,6 +38,11 @@
     .project-details { color:var(--muted); font-size:12px; line-height:1.8; margin-bottom:20px; }
     .project-details span { display:block; }
     .project-description { max-width:700px; }
+    .exhibition-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:24px; }
+    .exhibition-gallery a { display:block; overflow:hidden; background:#151515; }
+    .exhibition-gallery img { display:block; width:100%; height:100%; aspect-ratio:4/3; object-fit:cover; transition:opacity .2s ease; }
+    .exhibition-gallery a:hover img { opacity:.78; }
+    .exhibition-gallery .portrait img { aspect-ratio:3/4; }
     .project-description a { text-decoration:underline; text-underline-offset:3px; }
     .project-note { color:var(--muted); font-size:12px; margin-top:18px; }
 
@@ -111,6 +116,12 @@
             <p><em><a href="https://www.goethe.de/ins/jo/en/kul/jem/rit.html" target="_blank" rel="noopener noreferrer">Roots of Identity: Yemeni Photo Exhibition</a></em> explores Yemen’s cultural heritage and the histories, landscapes, people, traditions, architecture, and artistic practices that shape Yemeni identity.</p>
             <p>Bringing together photographic perspectives on Yemen, the exhibition considers how cultural identity can be imagined and represented amid conflict and disruption. It positions art as a means of communication and resistance: a way for Yemeni artists to tell contemporary stories, challenge reductive representations of the country, and create space for understanding, peace, and social connection.</p>
           </div>
+          <div class="exhibition-gallery" aria-label="Installation photographs from Roots of Identity">
+            <a href="images/IMG_8616.jpg" target="_blank" rel="noopener noreferrer"><img src="images/IMG_8616.jpg" alt="Installation view of Roots of Identity" loading="lazy"></a>
+            <a href="images/IMG_8618.jpg" target="_blank" rel="noopener noreferrer"><img src="images/IMG_8618.jpg" alt="Installation view of Roots of Identity" loading="lazy"></a>
+            <a href="images/IMG_8619.jpg" target="_blank" rel="noopener noreferrer"><img src="images/IMG_8619.jpg" alt="Installation view of Roots of Identity" loading="lazy"></a>
+            <a href="images/IMG_8675.jpg" target="_blank" rel="noopener noreferrer"><img src="images/IMG_8675.jpg" alt="Installation view of Roots of Identity" loading="lazy"></a>
+          </div>
         </article>
         <article class="curatorial-project">
           <p class="project-kicker">Mixed-media exhibition · 2025</p>
@@ -124,6 +135,12 @@
             <p><em>SAWA</em>—Arabic for “together”—brings together the outcomes of two cultural projects in Yemen with work by thirteen emerging Yemeni artists and practitioners. Across photography, film, comics, illustration, podcasts, music, and community practice, the exhibition explores how creative voices build connections in challenging circumstances.</p>
             <p>Rather than presenting a single narrative, <em>SAWA</em> brings together projects shaped by creative hubs, academic exchanges, and workshops. It understands culture not as a luxury, but as a way to document lived experiences, bring communities together, make participation possible, and imagine shared futures.</p>
           </div>
+          <div class="exhibition-gallery" aria-label="Installation photographs from SAWA">
+            <a href="images/IMG_4347.jpg" target="_blank" rel="noopener noreferrer"><img src="images/IMG_4347.jpg" alt="Installation view of SAWA" loading="lazy"></a>
+            <a href="images/IMG_4344.jpg" target="_blank" rel="noopener noreferrer"><img src="images/IMG_4344.jpg" alt="Installation view of SAWA" loading="lazy"></a>
+            <a class="portrait" href="images/IMG_4336.jpg" target="_blank" rel="noopener noreferrer"><img src="images/IMG_4336.jpg" alt="Portrait-format installation view of SAWA" loading="lazy"></a>
+            <a class="portrait" href="images/IMG_4334.jpg" target="_blank" rel="noopener noreferrer"><img src="images/IMG_4334.jpg" alt="Portrait-format installation view of SAWA" loading="lazy"></a>
+          </div>
         </article>
         <article class="curatorial-project">
           <p class="project-kicker">Interdisciplinary residency</p>
@@ -131,7 +148,6 @@
           <div class="project-details"><span>Guest curator</span></div>
         </article>
       </div>
-      <p class="project-note">Exhibition photographs can be added to each project entry to document the installation and display.</p>
     </section>
   </div>
 </main>
