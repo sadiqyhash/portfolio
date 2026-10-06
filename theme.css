@@ -1,0 +1,45 @@
+/* Shared portfolio design system — Sadiq Al-Harasi */
+:root {
+  color-scheme: dark;
+  --paper: #080808;
+  --ink: #f2f0ea;
+  --muted: #aaa7a0;
+  --line: #343434;
+  --surface: #111111;
+  --hover: #242424;
+}
+
+html { background: var(--paper); }
+body { background: var(--paper) !important; color: var(--ink); }
+a { color: inherit; }
+header, .site-header {
+  background: var(--paper);
+  border-color: var(--line) !important;
+}
+.site-header, header { min-height: 76px; padding: 20px 5%; gap: 24px; }
+.site-name, .logo { color: var(--ink); }
+.navigation, nav { color: var(--ink); gap: 22px; }
+.navigation a, nav a, .dropdown-trigger, .nav-link { color: var(--ink); }
+.dropdown-menu, .dropdown, .nav-item .dropdown {
+  background: var(--surface) !important;
+  color: var(--ink);
+  border-color: var(--line) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+.dropdown-menu a, .dropdown a { color: var(--ink); }
+.menu-heading, .dropdown-label, .dropdown-menu .menu-heading { color: var(--muted) !important; }
+main { color: var(--ink); }
+h1, h2, h3, p, .project-info, .project-text, .project-meta, .image-caption, .image-counter, .counter { color: inherit; }
+.project-meta, .project-info .metadata, .project-text .project-meta, .image-caption, .image-counter, .counter, footer { color: var(--muted); }
+footer { border-color: var(--line) !important; }
+.carousel-arrow, .arrow, .image-arrow {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-color: #555 !important;
+}
+.carousel-arrow:hover, .arrow:hover, .image-arrow:hover { background: var(--hover) !important; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px solid #d7d2c8; outline-offset: 4px; }
+@media (max-width: 760px) {
+  .site-header, header { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .navigation, nav { flex-wrap: wrap; gap: 14px 18px; }
+}
