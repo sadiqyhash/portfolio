@@ -351,6 +351,35 @@
     nav details.dropdown .menu-heading { margin:10px 0 2px; color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
     .image-stage img[hidden] { display:none !important; }
 
+  
+    /* Consistent image frame and pinned image while reading */
+    .carousel, .image-area {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      min-width: 0;
+    }
+    .image-stage {
+      box-sizing: border-box;
+      width: 100%;
+      height: min(64vh, 570px);
+      min-height: 280px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: transparent;
+    }
+    .image-stage img {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+    @media (max-width: 760px) {
+      .carousel, .image-area { position: static; top: auto; }
+      .image-stage { height: min(62vh, 480px); min-height: 240px; }
+    }
+
   </style>
   <link rel="stylesheet" href="theme.css">
 </head>
