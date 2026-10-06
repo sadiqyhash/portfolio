@@ -57,3 +57,24 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px soli
 .image-container {
   background: var(--paper) !important;
 }
+
+/* Consistent, accessible dropdown navigation across all pages */
+details.dropdown { position: relative; }
+details.dropdown > summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--ink);
+  white-space: nowrap;
+}
+details.dropdown > summary::-webkit-details-marker { display: none; }
+details.dropdown > summary::after { content: " ↓"; font-size: 11px; }
+details.dropdown[open] > .dropdown-menu,
+details.dropdown:hover > .dropdown-menu,
+details.dropdown:focus-within > .dropdown-menu {
+  display: flex !important;
+  flex-direction: column;
+  gap: 10px;
+}
+details.dropdown:not([open]) > .dropdown-menu { display: none; }
+.navigation { align-items: center; }
+.navigation > a { white-space: nowrap; }
